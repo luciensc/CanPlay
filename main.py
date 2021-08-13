@@ -2,6 +2,8 @@ import numpy as np
 
 # WHISTLES
 tin_whistle_D = ["D", "E", "F#", "G", "A", "B", "C", "C#"]
+tin_whistle_Dplus = ["D", "E", "F#", "G", "G#", "A", "B", "C", "C#"]
+
 
 # AUX FUNCTIONS
 SCALE = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B",  # sharp
@@ -54,8 +56,9 @@ def transpose_to_playable(melody, whistle):
 
 
 if __name__ == "__main__":
-    in_melody = ["C", "C#", "Db", "A#", "Bb"]
-    # ["F", "C", "Eb", "C#", "C", "Bb", "G", "Ab"]
+    in_melody = ["F", "C", "Eb", "C#", "C", "Bb", "G", "Ab", "A"]
+    # with additional A from chorus: cannot be played using regular D whistle, only using extended Ab
+    # ["C", "C#", "Db", "A#", "Bb"]
 
     # # transform input melody to numeric (unique mapping, transposable)
     # num_melody = [note_to_numeric(note) for note in in_melody]
@@ -64,5 +67,5 @@ if __name__ == "__main__":
     # # check if a melody is playable on a particular whistle
     # melody_playable(melody=in_melody, whistle=tin_whistle_D)
 
-    transpose_to_playable(melody=in_melody, whistle=tin_whistle_D)
+    transpose_to_playable(melody=in_melody, whistle=tin_whistle_Dplus)
 
